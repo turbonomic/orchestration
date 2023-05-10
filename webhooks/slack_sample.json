@@ -1,0 +1,17 @@
+{
+    "displayName": "Send Pending Turbo Action to Slack",
+    "className": "Workflow",
+    "description": "Pending Action sent to Slack with button workflow",
+    "discoveredBy": {
+      "readonly": false
+    },
+    "type": "WEBHOOK",
+    "typeSpecificDetails": {
+      "url": "https://hooks.slack.com/services/T29N3CR5L/B043T4SsoH0",
+      "method": "POST",
+      "template": "{ \"blocks\": [ { \"type\": \"section\", \"text\": { \"type\": \"mrkdwn\", \"text\": \" *Turbonomic recommended a new action!*\" } }, { \"type\": \"section\", \"text\": { \"type\": \"mrkdwn\", \"text\": \" _ $!action.details _\" } }, { \"type\": \"section\", \"text\": { \"type\": \"mrkdwn\", \"text\": \"_Cost: $!action.stats[0].value $/hr_\" } }, { \"type\": \"section\", \"text\": { \"type\": \"mrkdwn\", \"text\": \"_Location: $!action.target.discoveredBy.type : $!action.target.discoveredBy.displayName _\" } }, { \"type\": \"divider\" }, { \"type\": \"actions\", \"elements\": [ {  \"type\": \"button\",  \"text\": {  \"type\": \"plain_text\",  \"text\": \"Review in Turbonomic\",  \"emoji\": true  },  \"value\": \"click_here\",  \"url\": \"https://customer.turbo-server.com/app/#/view/main/$action.target.uuid/overview\"}]}]}",
+      "authenticationMethod": "NONE",
+      "trustSelfSignedCertificates": false,
+      "type": "WebhookApiDTO"
+    }
+  }
