@@ -1,0 +1,27 @@
+{
+    "displayName": "Send to Telegram POST",
+    "className": "Workflow",
+    "description": "Telegram Test",
+    "discoveredBy": {
+      "readonly": false
+    },
+    "type": "WEBHOOK",
+    "typeSpecificDetails": {
+      "url": "https://api.telegram.org/bot<YOUR_BOT_API_TOKEN>/sendMessage",
+      "method": "POST",
+      "template": "{\"text\": \"Action: $action.details. \nCause: $esc.json($action.risk.description)\",\"disable_web_page_preview\": \"False\",\"disable_notification\": \"False\",\"chat_id\": \"<YOUR_CHAT_ID>\"}",
+      "authenticationMethod": "NONE",
+      "trustSelfSignedCertificates": false,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "type": "WebhookApiDTO"
+    }
+  }
