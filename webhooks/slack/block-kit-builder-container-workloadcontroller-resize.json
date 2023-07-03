@@ -1,0 +1,34 @@
+{
+	"blocks": [
+		{
+			"type": "header",
+			"text": {
+				"type": "plain_text",
+				"text": ":package: $action.target.className $action.actionType Action :package:",
+				"emoji": true
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": ">- *Status*: #if( $action.actionState == \"SUCCEEDED\") :white_check_mark:#elseif ( $action.actionState == \"READY\") :hourglass:#elseif ( $action.actionState == \"IN_PROGRESS\") :construction:#else :x:#end `$action.actionState` via `$!action.actionMode EXECUTION` by `$!action.userName` at `$!action.updateTime`\n>- *Instance*: `$action.target.displayName`\n>- *Namespace*: `$action.target.aspects.containerPlatformContextAspect.namespace`\n>- *Cluster*: `$action.target.aspects.containerPlatformContextAspect.containerPlatformCluster`\n>- *Details*: `$action.details`\n>- *Risk*: `$action.risk.description`\n>- *Reason*: `$action.risk.subCategory`\n>- *Action*:\n#foreach($containerAction in $action.compoundActions)\n>      - `$containerAction.target.displayName`#foreach($resizeRisk in $containerAction.risk.reasonCommodities) `$resizeRisk`#end resized from `$containerAction.currentValue $containerAction.valueUnits` to `$containerAction.newValue $containerAction.valueUnits`\n#end"
+			}
+		},
+		{
+			"type": "actions",
+			"elements": [
+				{
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"text": ":turbonomic: See Action in Turbo :turbonomic:",
+						"emoji": true
+					},
+					"value": "Click Here",
+					"url": "https://<YOUR_TURBO_URL>/app/#/view/main/$action.target.uuid/overview"
+				}
+			]
+		}
+	]
+}

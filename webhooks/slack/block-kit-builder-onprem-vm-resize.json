@@ -1,0 +1,34 @@
+{
+	"blocks": [
+		{
+			"type": "header",
+			"text": {
+				"type": "plain_text",
+				"text": ":scales: $action.target.className $action.actionType Action :scales:",
+				"emoji": true
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": ">- *Status*: #if( $action.actionState == \"SUCCEEDED\") :white_check_mark:#elseif ( $action.actionState == \"READY\") :hourglass:#elseif ( $action.actionState == \"IN_PROGRESS\") :construction:#else :x:#end `$action.actionState` via `$!action.actionMode EXECUTION` by `$!action.userName` at `$!action.updateTime`\n>- *Instance*: `$action.target.displayName`\n>- *Details*: `$action.details`\n>- *Reason*: `$action.risk.subCategory`\n>- *Risk*: #foreach($resizeRisk in $action.risk.reasonCommodities) `$resizeRisk` #end"
+			}
+		},
+		{
+			"type": "actions",
+			"elements": [
+				{
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"text": ":turbonomic: See Action in Turbo :turbonomic:",
+						"emoji": true
+					},
+					"value": "Click Here",
+					"url": "https://<YOUR_TURBO_URL>/app/#/view/main/$action.target.uuid/overview"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+    "blocks": [{
+            "type": "header",
+            "text": {
+                "type": "plain_text",
+                "text": ":woman-running: $action.target.className $action.actionType Action :woman-running:",
+                "emoji": true
+            }
+        }, {
+            "type": "section",
+            "text": {
+                "type": "mrkdwn",
+                "text": ">- *Status*: #if( $action.actionState == \"SUCCEEDED\") :white_check_mark:#elseif ( $action.actionState == \"READY\") :hourglass:#elseif ( $action.actionState == \"IN_PROGRESS\") :construction:#else :x:#end `$action.actionState` via `$!action.actionMode EXECUTION` by `$!action.userName` at `$!action.updateTime`\n>- *Details*: `$action.target.displayName` was moved from `$action.currentEntity.displayName` to `$action.newEntity.displayName`\n>- *Reason*: `$action.risk.subCategory`\n>- *Risk*: `$esc.json($action.risk.description)`"
+            }
+        }, {
+            "type": "actions",
+            "elements": [{
+                    "type": "button",
+                    "text": {
+                        "type": "plain_text",
+                        "text": ":turbonomic: See Action in Turbo :turbonomic:",
+                        "emoji": true
+                    },
+                    "value": "Click Here",
+                    "url": "https://<YOUR_TURBO_URL>/app/#/view/main/$action.target.uuid/overview"
+                }
+            ]
+        }
+    ]
+}
