@@ -19,7 +19,7 @@
         },
         {
           "name": "Authorization",
-          "value": "Bearer <YOUR_SENDGRID_APIKEY>"
+          "value": "Bearer <YOUR_SENDGRID_API_KEY>"
         }
       ],
       "type": "WebhookApiDTO"
