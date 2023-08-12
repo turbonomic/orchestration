@@ -1,0 +1,27 @@
+{
+    "displayName": "VM Resize Actions To SendGrid",
+    "className": "Workflow",
+    "description": "VM Resize action details sent to SendGrid",
+    "discoveredBy": {
+      "readonly": false
+    },
+    "type": "WEBHOOK",
+    "typeSpecificDetails": {
+      "url": "https://api.sendgrid.com/v3/mail/send",
+      "method": "POST",
+      "template": "{\"from\":{\"email\":\"<FROM_EMAIL_ADDRESS>\"},\"reply_to\":{\"email\":\"<REPLY_TO_EMAIL_ADDRESS>\",\"name\":\"<REPLY_TO_NAME>\"},\"personalizations\":[{\"to\":[{\"email\":\"<TO_EMAIL_ADDRESS>\"}],\"cc\":[{\"email\":\"<CC_EMAIL_ADDRESS>\",\"name\":\"<CC_NAME>\"}],\"dynamic_template_data\":{\"displayName\":\"$action.target.displayName\",\"currentValue\":\"#if( $action.valueUnits == \"KB\") #set( $fromGB = $action.currentValue / 1048576 ) $fromGB#else $action.currentValue#end\",\"newValue\":\"#if( $action.valueUnits == \"KB\") #set( $fromGB = $action.newValue / 1048576 ) $fromGB#else $action.newValue#end\",\"valueUnits\":\"#if( $action.valueUnits == \"KB\") GB#else $action.valueUnits#end\",\"uuid\":\"$action.target.uuid\",\"actionState\":\"$action.actionState\",\"actionMode\":\"$!action.actionMode\",\"userName\":\"$!action.userName\",\"updateTime\":\"$!action.updateTime\",\"details\":\"$action.details\",\"risk_subCategory\":\"$action.risk.subCategory\",\"risk_reasonCommodities\":\"#foreach($resizeRisk in $action.risk.reasonCommodities) $resizeRisk #end\"}}],\"template_id\":\"<SENDGRID_DYNAMIC_TEMPLATE_ID>\"}",
+      "authenticationMethod": "NONE",
+      "trustSelfSignedCertificates": false,
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer <YOUR_SENDGRID_APIKEY>"
+        }
+      ],
+      "type": "WebhookApiDTO"
+    }
+  }
