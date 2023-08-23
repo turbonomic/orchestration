@@ -1,7 +1,7 @@
 {
     "from": {
         "email": "<FROM_EMAIL_ADDRESS>",
-		"name": "<FROM_NAME>"
+        "name": "<FROM_NAME>"
     },
     "reply_to": {
         "email": "<REPLY_TO_EMAIL_ADDRESS>",
