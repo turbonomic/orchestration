@@ -1,0 +1,27 @@
+{
+    "displayName": "Send to RocketChat POST",
+    "className": "Workflow",
+    "description": "RocketChat Test",
+    "discoveredBy": {
+      "readonly": false
+    },
+    "type": "WEBHOOK",
+    "typeSpecificDetails": {
+      "url": "webhook-url-from-RocketChat-Integrations-incomming-webhook",
+      "method": "POST",
+      "template": "{ \"text\":\"Turbonomic -- DATA: Action Details: $action.details\" }",
+      "authenticationMethod": "NONE",
+      "trustSelfSignedCertificates": false,
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "type": "WebhookApiDTO"
+    }
+  }
