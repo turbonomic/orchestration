@@ -1,5 +1,4 @@
 {
-    "uuid": "637718381817056",
     "displayName": "Container Pod Move Actions to Turbo Slack",
     "className": "Workflow",
     "description": "Container Pod move action details sent to Slack",
