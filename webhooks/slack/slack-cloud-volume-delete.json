@@ -1,5 +1,4 @@
 {
-    "uuid": "637784573012448",
     "displayName": "Cloud Volume Delete Actions To Slack",
     "className": "Workflow",
     "description": "Cloud Volume Delete action details sent to Slack",
