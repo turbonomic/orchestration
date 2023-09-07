@@ -1,5 +1,4 @@
 {
-  "uuid": "637808836205264",
   "displayName": "VM Node Suspend Actions to Slack",
   "className": "Workflow",
   "description": "VM Node suspend action details sent to Slack",
