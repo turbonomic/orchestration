@@ -1,5 +1,4 @@
 {
-    "uuid": "637784573012448",
     "displayName": "Cloud VM and Cloud Volume Scale Actions To Slack",
     "className": "Workflow",
     "description": "Cloud VM and Cloud Volume Scale action details sent to Slack",
