@@ -1,7 +1,7 @@
 {
-  "displayName": "VM Node Suspend Actions to Slack",
+  "displayName": "VM Node Provision Suspend Actions to Slack",
   "className": "Workflow",
-  "description": "VM Node suspend action details sent to Slack",
+  "description": "VM Node provision and suspend action details sent to Slack",
   "discoveredBy": {
     "readonly": false
   },
