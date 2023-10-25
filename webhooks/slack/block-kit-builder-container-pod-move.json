@@ -12,7 +12,7 @@
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ">- *Status*: #if( $action.actionState == \"SUCCEEDED\") :white_check_mark:#elseif ( $action.actionState == \"READY\") :hourglass:#elseif ( $action.actionState == \"IN_PROGRESS\") :construction:#else :x:#end `$action.actionState` via `$!action.actionMode EXECUTION` by `$!action.userName` at `$!action.updateTime`\n>- *Details*: Move `$action.target.displayName` from `$action.currentEntity.displayName` to `$action.newEntity.displayName`\n>- *Cluster*: `$action.target.discoveredBy.displayName`\n>- *Reason*: `$action.risk.subCategory`\n>- *Risk*: `$esc.json($action.risk.description)`"
+				"text": ">- *Status*: #if( $action.actionState == 'SUCCEEDED') :white_check_mark:#elseif ( $action.actionState == 'READY') :hourglass:#elseif ( $action.actionState == 'IN_PROGRESS') :construction:#else :x:#end `$action.actionState` via `$!action.actionMode EXECUTION` by `$!action.userName` at `$!action.updateTime`\n>- *Details*: Move `$action.target.displayName` from `$action.currentEntity.displayName` to `$action.newEntity.displayName`\n>- *Cluster*: `$action.target.discoveredBy.displayName`\n>- *Reason*: `$action.risk.subCategory`\n>- *Risk*: `$esc.json($action.risk.description)`"
 			}
 		},
 		{
