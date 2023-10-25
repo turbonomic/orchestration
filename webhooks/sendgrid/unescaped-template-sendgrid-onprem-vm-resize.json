@@ -19,9 +19,9 @@
             ],
             "dynamic_template_data": {
                 "displayName": "$action.target.displayName",
-                "currentValue": "#if( $action.valueUnits == \"KB\") #set( $fromGB = $action.currentValue / 1048576 ) $fromGB#else $action.currentValue#end",
-                "newValue": "#if( $action.valueUnits == \"KB\") #set( $fromGB = $action.newValue / 1048576 ) $fromGB#else $action.newValue#end",
-                "valueUnits": "#if( $action.valueUnits == \"KB\") GB#else $action.valueUnits#end",
+                "currentValue": "#if( $action.valueUnits == 'KB') #set( $fromGB = $action.currentValue / 1048576 ) $fromGB#else $action.currentValue#end",
+                "newValue": "#if( $action.valueUnits == 'KB') #set( $fromGB = $action.newValue / 1048576 ) $fromGB#else $action.newValue#end",
+                "valueUnits": "#if( $action.valueUnits == 'KB') GB#else $action.valueUnits#end",
                 "turboUrl": "<YOUR_TURBONOMIC_URL>",
                 "uuid": "$action.target.uuid",
                 "actionState": "$action.actionState",
