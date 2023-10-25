@@ -4,7 +4,7 @@
 			"type": "header",
 			"text": {
 				"type": "plain_text",
-				"text": "#if( $action.actionType == \"SUSPEND\") :octagonal_sign:#else :large_green_circle:#end $action.target.className $action.actionType Action #if( $action.actionType == \"SUSPEND\") :octagonal_sign:#else :large_green_circle:#end",
+				"text": "#if( $action.actionType == 'SUSPEND') :octagonal_sign:#else :large_green_circle:#end $action.target.className $action.actionType Action #if( $action.actionType == 'SUSPEND') :octagonal_sign:#else :large_green_circle:#end",
 				"emoji": true
 			}
 		},
@@ -12,7 +12,7 @@
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ">- *Status*: #if( $action.actionState == \"SUCCEEDED\") :white_check_mark:#elseif ( $action.actionState == \"READY\") :hourglass:#elseif ( $action.actionState == \"IN_PROGRESS\") :construction:#else :x:#end `$action.actionState` via `$!action.actionMode EXECUTION` by `$!action.userName` at `$!action.updateTime`\n>- *Instance*: `$action.target.displayName`\n>- *Details*: `$action.details`\n>- *Cluster*: `$action.target.aspects.containerPlatformContextAspect.containerPlatformCluster`\n>- *Reason*: `$action.risk.subCategory`\n>- *Risk*: `$esc.json($action.risk.description)`"
+				"text": ">- *Status*: #if( $action.actionState == 'SUCCEEDED') :white_check_mark:#elseif ( $action.actionState == 'READY') :hourglass:#elseif ( $action.actionState == 'IN_PROGRESS') :construction:#else :x:#end `$action.actionState` via `$!action.actionMode EXECUTION` by `$!action.userName` at `$!action.updateTime`\n>- *Instance*: `$action.target.displayName`\n>- *Details*: `$action.details`\n>- *Cluster*: `$action.target.aspects.containerPlatformContextAspect.containerPlatformCluster`\n>- *Reason*: `$action.risk.subCategory`\n>- *Risk*: `$esc.json($action.risk.description)`"
 			}
 		},
 		{
