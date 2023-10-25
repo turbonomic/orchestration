@@ -12,7 +12,7 @@
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": ">- *Status*: #if( $action.actionState == \"SUCCEEDED\") :white_check_mark:#elseif ( $action.actionState == \"READY\") :hourglass:#elseif ( $action.actionState == \"IN_PROGRESS\") :construction:#else :x:#end `$action.actionState` via `$!action.actionMode EXECUTION` by `$!action.userName` at `$!action.updateTime`\n>- *Instance*: `$action.target.displayName`\n>- *Details*: `$action.details`\n>- *Reason*: `$action.risk.subCategory`\n>- *Risk*: `$action.risk.description`\n>- *Account*: `$action.currentEntity.discoveredBy.displayName` `$action.currentLocation.displayName`\n>- *Cost Impact*: #set( $savings = $action.stats[0].value * 730) `$$savings/mo` #if( $savings > 0) :money_mouth_face:#else :chart_with_upwards_trend:#end"
+				"text": ">- *Status*: #if( $action.actionState == 'SUCCEEDED') :white_check_mark:#elseif ( $action.actionState == 'READY') :hourglass:#elseif ( $action.actionState == 'IN_PROGRESS') :construction:#else :x:#end `$action.actionState` via `$!action.actionMode EXECUTION` by `$!action.userName` at `$!action.updateTime`\n>- *Instance*: `$action.target.displayName`\n>- *Details*: `$action.details`\n>- *Reason*: `$action.risk.subCategory`\n>- *Risk*: `$action.risk.description`\n>- *Account*: `$action.currentEntity.discoveredBy.displayName` `$action.currentLocation.displayName`\n>- *Cost Impact*: #set( $savings = $action.stats[0].value * 730) `$$savings/mo` #if( $savings > 0) :money_mouth_face:#else :chart_with_upwards_trend:#end"
 			}
 		},
 		{
