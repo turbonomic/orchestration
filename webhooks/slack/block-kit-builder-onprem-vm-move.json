@@ -3,7 +3,7 @@
             "type": "header",
             "text": {
                 "type": "plain_text",
-                "text": ":woman-running: $action.target.className $action.actionType Action :woman-running:",
+                "text": ":woman-running: $action.target.className $action.currentEntity.className $action.actionType Action :woman-running:",
                 "emoji": true
             }
         }, {
